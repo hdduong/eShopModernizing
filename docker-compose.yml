@@ -9,15 +9,7 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - sql.data
-
-  eshop.modernized.webforms:
-    image: eshop/modernizedwebforms:${TAG:-latest}
-    build:
-      context: ./deploy/webforms
-      dockerfile: Dockerfile
-    depends_on:
-      - sql.data      
-
+      
   eshop.modernized.mvc:
     image: eshop/modernizedmvc:${TAG:-latest}
     build:
@@ -27,5 +19,4 @@ services:
       - sql.data      
     
   sql.data:
-    image: microsoft/mssql-server-windows-developer
-
+    image: hduong/mssql-server-2022-dev:2022
