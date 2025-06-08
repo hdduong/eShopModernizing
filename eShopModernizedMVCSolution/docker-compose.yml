@@ -6,8 +6,3 @@ services:
     build:
       context: .\src\eShopModernizedMVC
       dockerfile: Dockerfile
-    depends_on:
-      - sql.data
-
-  sql.data:
-    image: hduong/mssql-server-2022-dev:2022
